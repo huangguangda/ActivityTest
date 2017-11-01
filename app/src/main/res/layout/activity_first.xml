@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/button_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button 1"/>
+    <!--添加了id，就会自动在R文件中生成-->
+    <!--android:id是给当前的元素一个唯一标识符，一定不要漏了+
+     漏了就是xml中引用资源的语法-->
+    <!--match_parent:表示让当前元素和父元素一样宽，
+    wrap_content:表示当前元素的高度只要能刚好包含里面的内容就行。-->
+</LinearLayout>
