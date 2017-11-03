@@ -1,6 +1,7 @@
 package cn.edu.gdmec.android.activitytest;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -25,8 +26,10 @@ public class FirstActivity extends AppCompatActivity {
         button1.setOnClickListener ( new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                Toast.makeText ( FirstActivity.this, "You clicked Button 1",
-                        Toast.LENGTH_SHORT ).show ();
+//                Toast.makeText ( FirstActivity.this, "You clicked Button 1",
+//                        Toast.LENGTH_SHORT ).show ();
+                Intent intent = new Intent ( FirstActivity.this, SecondActivity.class );
+                startActivity ( intent );
                 //Toast.LENGTH_SHORT显示时长
             }
         } );
