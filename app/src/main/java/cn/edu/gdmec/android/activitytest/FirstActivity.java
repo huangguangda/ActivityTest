@@ -33,8 +33,12 @@ public class FirstActivity extends AppCompatActivity {
                 //Intent intent = new Intent ( FirstActivity.this, SecondActivity.class );
                 //Intent intent = new Intent ( "cn.edu.gdmec.android.activitytest.ACTION_START" );
                 //intent.addCategory ( "cn.edu.gdmec.android.activitytest.MY_CATEGORY" );
-                Intent intent = new Intent ( Intent.ACTION_VIEW );
-                intent.setData ( Uri.parse ("http://www.baidu.com") );
+//                Intent intent = new Intent ( Intent.ACTION_VIEW );
+//                intent.setData ( Uri.parse ("http://www.baidu.com") );
+                //调用系统打电话
+                Intent intent = new Intent ( Intent.ACTION_DIAL );
+                intent.setData ( Uri.parse ( "tel:10086" ) );
+
                 startActivity ( intent );
                 //Toast.LENGTH_SHORT显示时长
             }
