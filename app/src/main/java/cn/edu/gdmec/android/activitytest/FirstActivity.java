@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,15 +39,19 @@ public class FirstActivity extends AppCompatActivity {
                 //调用系统打电话
 //                Intent intent = new Intent ( Intent.ACTION_DIAL );
 //                intent.setData ( Uri.parse ( "tel:10086" ) );
-                String data = "Hello SecondActivity";
+                //添加日志
+//                String data = "Hello SecondActivity";
+//                Intent intent = new Intent ( FirstActivity.this, SecondActivity.class );
+//                intent.putExtra ( "extra_data", data );
+//
+//                startActivity ( intent );
                 Intent intent = new Intent ( FirstActivity.this, SecondActivity.class );
-                intent.putExtra ( "extra_data", data );
-
-                startActivity ( intent );
+                startActivityForResult ( intent, 1 );
                 //Toast.LENGTH_SHORT显示时长
             }
         } );
     }
+
         @Override
         public boolean onCreateOptionsMenu(Menu menu){
             getMenuInflater ().inflate ( R.menu.main, menu );
@@ -65,5 +70,25 @@ public class FirstActivity extends AppCompatActivity {
                 default:
             }
             return true;
+        }
+//按钮间相互跳转
+        @Override
+        protected void onActivityResult(int requestCode, int resultCode, Intent data){
+            switch (requestCode){
+                case 1:
+                    if (resultCode == RESULT_OK){
+                        String returnedData = data.getStringExtra ( "data_return" );
+                        Log.d ("FirstActivity", returnedData);
+                    }
+                    break;
+                default:
+            }
+        }
+        @Override
+    public void onBackPressed(){
+            Intent intent = new Intent (  );
+            intent.putExtra ( "data_return", "Hello FirstActivity" );
+            setResult ( RESULT_OK, intent );
+            finish ();
         }
 }
