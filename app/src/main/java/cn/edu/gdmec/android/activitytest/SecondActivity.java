@@ -1,9 +1,11 @@
 package cn.edu.gdmec.android.activitytest;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Window;
 
 /**
@@ -16,5 +18,8 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.second_layout );
         //ctrl+o  不要手动
+        Intent intent = getIntent ();
+        String data = intent.getStringExtra ( "extra_data" );
+        Log.d ("SecondActivity", data);
     }
 }

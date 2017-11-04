@@ -36,8 +36,11 @@ public class FirstActivity extends AppCompatActivity {
 //                Intent intent = new Intent ( Intent.ACTION_VIEW );
 //                intent.setData ( Uri.parse ("http://www.baidu.com") );
                 //调用系统打电话
-                Intent intent = new Intent ( Intent.ACTION_DIAL );
-                intent.setData ( Uri.parse ( "tel:10086" ) );
+//                Intent intent = new Intent ( Intent.ACTION_DIAL );
+//                intent.setData ( Uri.parse ( "tel:10086" ) );
+                String data = "Hello SecondActivity";
+                Intent intent = new Intent ( FirstActivity.this, SecondActivity.class );
+                intent.putExtra ( "extra_data", data );
 
                 startActivity ( intent );
                 //Toast.LENGTH_SHORT显示时长
