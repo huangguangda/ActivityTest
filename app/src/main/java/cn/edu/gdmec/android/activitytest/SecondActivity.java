@@ -12,6 +12,7 @@ import android.widget.Button;
 
 /**
  * Created by Jack on 2017/11/3.
+ * hahhh
  */
 
 public class SecondActivity extends AppCompatActivity {
