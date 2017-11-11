@@ -2,14 +2,12 @@ package cn.edu.gdmec.android.activitytest;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -24,7 +22,7 @@ public class FirstActivity extends AppCompatActivity {
         setContentView ( R.layout.activity_first );
 
         //在活动中使用Toast
-        Button button1=( Button ) findViewById ( R.id.button_1 );
+        final Button button1=( Button ) findViewById ( R.id.button_1 );
         button1.setOnClickListener ( new View.OnClickListener () {
             @Override
             public void onClick(View v) {
@@ -47,6 +45,9 @@ public class FirstActivity extends AppCompatActivity {
 //                startActivity ( intent );
                 Intent intent = new Intent ( FirstActivity.this, SecondActivity.class );
                 startActivityForResult ( intent, 1 );
+
+//                Intent intent = new Intent ( FirstActivity.this, SecondActivity.class );
+//                AnimUtils.startIntent(intent,button1, (Activity ) FirstActivity.this,R.id.button_1);
                 //Toast.LENGTH_SHORT显示时长
             }
         } );
@@ -90,5 +91,7 @@ public class FirstActivity extends AppCompatActivity {
             intent.putExtra ( "data_return", "Hello FirstActivity" );
             setResult ( RESULT_OK, intent );
             finish ();
+           // AnimUtils.finishonBackPressed(FirstActivity.this,R.id.button_1);
+
         }
 }

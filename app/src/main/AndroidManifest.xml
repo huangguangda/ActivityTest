@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!--注册-->
-        <activity android:name=".FirstActivity">
+        <activity
+            android:name=".FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
